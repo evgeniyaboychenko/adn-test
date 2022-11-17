@@ -1,0 +1,73 @@
+.accordion__container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $trans-default;
+}
+
+.accordion__list {
+  max-height: 190px;
+
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 130%;
+
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: $color-dim-gray;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    background: $color-dim-gray;
+  }
+}
+
+.accordion__button {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+
+  background-color: inherit;
+
+  border: none;
+  cursor: pointer;
+  svg {
+    transform: rotate(180deg);
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      color: $color-safety-orange;
+    }
+  }
+
+  &.is-open {
+    svg {
+      transform: rotate(0);
+    }
+  }
+}
+
+.accordion__button.is-open + .accordion__container {
+  max-height: 300px;
+  transition: max-height $trans-default;
+}
+
+.accordion__item {
+  margin-bottom: 24px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+

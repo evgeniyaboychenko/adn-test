@@ -1,13 +1,22 @@
 .header {
   padding: 28px 0;
+  background-color: $color-nero;
 
-  background-color: $color-neon-blue;
+  // .container {
+  //   display: flex;
+  // }
 
-  .container {
-    display: flex;
-  }
+  // &__logo {
+  //   color: $color-default-white;
+  // }
+}
 
-  &__logo {
-    color: $color-default-white;
-  }
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__search {
+  width: 571px;
 }

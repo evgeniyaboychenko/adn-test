@@ -13,16 +13,267 @@
   </div>
 
   <div class="wrapper">
-    <-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 --> 
     @@include("source/html/base/header.html", {
       "index": true
     })
 
     <main>
-      <div class="container">
-        <p><a href="#" data-open-modal="feedback">modal--feedback link</a></p>
-        <p><a href="#" data-open-modal="success">modal--success link</a></p>
-      </div>
+      <div class="container container--inner">
+
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs__item">
+            <a class="link" href="index.html">Главная страница</a>
+            <svg width="8" height="8">
+              <use xlink:href="#icon-breadcrumbs-arrow"></use>
+            </svg>
+          <li class="breadcrumbs__item">
+            <span>Каталог</span>
+          </li>
+        </ul>
+
+      <section class="page-catalog">
+        <h1 class="title title--h1 page-catalog__title">Каталог
+          <span class="page-catalog__count">876</span>
+        </h1>
+        <div class="page-catalog__column">
+          <section class="filter">
+            <h2 class="visually-hidden">Фильтры</h2>
+
+            <form class="filter__form" action="#" method="get">
+              <fieldset class="filter__fieldset">
+                <div class="filter__accordion accordion">
+                  <button class="accordion__button is-open filter__title" type="button" >По популярности
+                    <svg width="17" height="16">
+                      <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                  </button>
+                  <div class="accordion__container">
+                    <ul class="accordion__list">
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="action" id="action" checked="">
+                        <label for="action">Экшн</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="adventure" id="adventure">
+                        <label for="adventure">Приключения</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="indie" id="indie" checked="">
+                        <label for="indie">Инди</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="card" id="card">
+                        <label for="card">Карточная</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="role" id="role">
+                        <label for="role">Ролевая</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="filter__fieldset">
+                <legend class="filter__title">Цена, ₽</legend>
+                <div class="price">
+                  <!-- <div class="price__scale">
+                    <div class="range-scale"></div>
+                  </div>
+                  <div class="roller roller-min"></div>
+                  <div class="roller roller-max"></div>
+                  <label class="visually-hidden" for="price">Диапазон цены</label>
+                  <input class="visually-hidden" type="text" value="0;10500" id="price" name="price"> -->
+
+                  <div class="price__container-value">
+                    <div class="price__value">
+                      <label aria-label="Минимальная цена" for="minprice">от</label>
+                      <input type="number" name="minprice" id="minprice" value="0" min="0" max="10500" step="10">
+                    </div>
+
+                    <div class="price__value">
+                      <label aria-label="Максимальная цена" for="maxprice">до</label>
+                      <input type="number" name="maxprice" id="maxprice" value="10500" min="0" max="10500" step="10">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="filter__fieldset">
+                <div class="filter__accordion accordion">
+                  <button class="accordion__button is-open filter__title" type="button">Жанр
+                    <svg width="17" height="16">
+                      <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                  </button>
+                  <div class="accordion__container">
+                    <ul class="accordion__list">
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="action" id="action" checked="">
+                        <label for="action">Экшн</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="adventure" id="adventure">
+                        <label for="adventure">Приключения</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="indie" id="indie" checked="">
+                        <label for="indie">Инди</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="card" id="card">
+                        <label for="card">Карточная</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="role" id="role">
+                        <label for="role">Ролевая</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="filter__fieldset">
+                <div class="filter__accordion accordion">
+                  <button class="accordion__button is-open filter__title" type="button">Издатель
+                    <svg width="17" height="16">
+                      <use xlink:href="#icon-arrow"></use>
+                    </svg>
+                  </button>
+                  <div class="accordion__container">
+                    <div class="search search--border-radius search--margin-16">
+                      <input type="search" id="searching-author" name="searching-author" aria-label="Искать издательство">
+                      <button class="link search__button" type="button">
+                        <svg width="17" height="17">
+                          <use xlink:href="#icon-search"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <ul class="accordion__list">
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="action" id="action" checked="">
+                        <label for="action">Экшн</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="adventure" id="adventure">
+                        <label for="adventure">Приключения</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="indie" id="indie" checked="">
+                        <label for="indie">Инди</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="card" id="card">
+                        <label for="card">Карточная</label>
+                      </li>
+                      <li class="accordion__item filter">
+                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="role" id="role">
+                        <label for="role">Ролевая</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </section>
+          <section class="catalog">
+            <h2 class="visually-hidden">Карточки каталога</h2>
+            <ul class="catalog__list">
+              <li class="catalog__item">
+                <a href="#" class="card-game card-game--new-label">
+                  <div class="card-game__img card-game__img--shadow">
+                    <picture>
+                      <source type="image/webp" srcset="img/content/games1.webp 1x, img/content/games1@2x.webp 2x">
+                      <img src="img/content/games1.jpg" srcset="img/content/games1@2x.jpg 2x" width="218" height="328" alt="Изображение с игрой">
+                    </picture>
+                  </div>
+                  <div class="card-game__info">
+                    <h4 class="title title--h4 title--center card-game__title">Red dead redemption 2</h4>
+                    <del class="card-game__old-price">3 500 ₽ </del>
+                    <span class="card-game__price">2 609 ₽</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <ul class="pagination">
+              <li class="pagination__item"><a class="link" href="#">
+                <svg width="32" height="32">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </a></li>
+              <li class="pagination__item"><a class="link" href="#">1</a></li>
+              <li class="pagination__item pagination__item--font-size-20"><a class="link" href="#">..</a></li>
+              <li class="pagination__item"><a class="link" href="#">22</a></li>
+              <li class="pagination__item is-current"><a class="link">23</a></li>
+              <li class="pagination__item"><a class="link" href="#">24</a></li>
+              <li class="pagination__item pagination__item--font-size-20"><a class="link" href="#">..</a></li>
+              <li class="pagination__item"><a class="link" href="#">51</a></li>
+              <li class="pagination__item pagination__item--arrow-rotate"><a class="link" href="#">
+                <svg width="32" height="32">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </a></li>
+            </ul>
+
+            <section class="about-games">
+              <h2 class="visually-hidden">Об играх</h2>
+              <h3 class="title title--h3">Купить игры жанра Экшен</h3>
+              <p class="about-games__description">
+                В&nbsp;разделе с&nbsp;играми <span class="about-games__link link link--blue">Экшен жанра</span>, вы&nbsp;найдете игры разнообразных форматов, будь-то с&nbsp;видом от&nbsp;первого или от&nbsp;третьего лица, с&nbsp;одиночной кампанией или с&nbsp;мультиплеером. В&nbsp;играх этого жанра Вас ждут большое количество перестрелок, беготни и&nbsp;многого другого! Выбрав понравившуюся, Вы&nbsp;можете купить игру жанра Экшен недорого и&nbsp;приступить к&nbsp;ее&nbsp;прохождению! В&nbsp;игре Вас будут ждать захватывающие задания, целью которых будет кого-то освободить или кого-то захватить! Отправляйтесь в&nbsp;открытый мир одиночной игры для ее&nbsp;изучения или&nbsp;же сразу познайте все прелести мультиплеерного режима, если в&nbsp;игре таковой имеется.
+              </p>
+              <h4 class="title title--h4">Подзаголовок уровня H4</h4>
+              <p class="about-games__description">
+                Как говорилось ранее, игры жанра Экшен могут быть с&nbsp;видами от&nbsp;третьего или от&nbsp;первого лица. Зачастую эти игры имеют вид от&nbsp;первого лица, но&nbsp;не&nbsp;исключено, что в&nbsp;ней будет несколько режимов видов. Она вообще может иметь вид сбоку и&nbsp;быть 2D&nbsp;платформером! Игры этого жанра могут иметь также возможность играть в&nbsp;кооперативном режиме, так что не&nbsp;забудьте пригласить в&nbsp;игру и&nbsp;своих друзей или найдите новых с&nbsp;помощью специального поиска!
+              </p>
+              <p class="about-games__description">
+                Для кооперативного режима в&nbsp;игре могут быть как и&nbsp;<span class="about-games__link link link--blue">отдельные миссии</span>, так может быть и&nbsp;возможность пройти всю игру вместе с&nbsp;друзьями и&nbsp;прожить все ее&nbsp;смешные и&nbsp;грустные моменты. Так что скорее выбирайте себе игру для покупки, приглашайте в&nbsp;нее друзей и&nbsp;отправляйтесь в&nbsp;захватывающий мир игр Экшен жанра, которые подарят вам много часов веселья и&nbsp;незабываемых миссий, которые вам надолго запомнятся!
+              </p>
+            </section>
+          </section>
+
+
+
+        </div>
+
+
+
+
+
+        <section class="advantages">
+          <h2 class="visually-hidden">Наши преимущетсва</h2>
+          <ul class="advantages__list">
+            <li class="advantages__item">
+              <div class="advantages__img">
+                <img src="./img/svg/icon-advantages1.svg" width="90" height="90" alt="Изображение с символом преимуществ">
+              </div>
+              <div class="advantages__description">Регулярные акции, скидки и&nbsp;бонусы</div>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__img">
+                <img src="./img/svg/icon-advantages2.svg" width="90" height="90" alt="Изображение с символом преимуществ">
+              </div>
+              <div class="advantages__description">Лицензионные ключи от&nbsp;официальных издателей</div>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__img">
+                <img src="./img/svg/icon-advantages3.svg" width="90" height="90" alt="Изображение с символом преимуществ">
+            </div>
+              <div class="advantages__description">Гарантированная техподдержка вашей покупки</div>
+            </li>
+            <li class="advantages__item">
+              <div class="advantages__img">
+                <img src="./img/svg/icon-advantages4.svg" width="90" height="90" alt="Изображение с символом преимуществ">
+              </div>
+              <div class="advantages__description">Мгновенное получение ключа на&nbsp;почту и&nbsp;в&nbsp;личный кабинет</div>
+            </li>
+          </ul>
+        </section>
+
+
+
+      </section>
+    </div>
+
+
+
     </main>
 
     @@include("source/html/base/footer.html")

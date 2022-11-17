@@ -1,0 +1,45 @@
+.price {
+  margin-bottom: 24px;
+}
+
+.price__container-value {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.price__value {
+  position: relative;
+  width: 97px;
+
+
+  label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 6px;
+
+    font-size: 16px;
+    line-height: 130%;
+
+    color: $color-dim-gray;
+  }
+
+  input {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    font-size: 16px;
+    line-height: 130%;
+
+    border: 1px solid $color-default-white;
+    border-radius: 40px;
+
+    background-color: $color-nero;
+    color: $color-default-white;
+
+  }
+}

@@ -1,0 +1,48 @@
+.pagination {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+
+  color: $color-dim-gray;
+
+  .pagination__item {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .link {
+      display: flex;
+    }
+
+    &--arrow-rotate {
+      .link svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &--font-size-20 {
+      font-size: 20px;
+    }
+  }
+
+  .pagination__item.is-current {
+    color: $color-default-white;
+
+    .link {
+      cursor: default;
+    }
+
+    .link:hover,
+    .link:focus {
+      color: $color-default-white;
+    }
+  }
+}

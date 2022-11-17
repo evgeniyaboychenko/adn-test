@@ -16,3 +16,20 @@
     padding: 0 16px;
   }
 }
+
+.container--inner {
+  padding: 0 370px;
+
+  @include vp-1439 {
+    padding: 0 130px;
+  }
+
+  @include vp-1023 {
+    padding: 0 48px;
+  }
+
+  @include vp-767 {
+    padding: 0 16px;
+  }
+
+}

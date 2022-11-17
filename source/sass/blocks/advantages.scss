@@ -1,0 +1,38 @@
+.advantages__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 276px));
+  grid-gap: 24px;
+}
+
+.advantages__item {
+  padding-top: 28px;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-bottom: 28px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 2px solid $color-dim-gray;
+  border-radius: 15px;
+}
+
+.advantages__description {
+  text-align: center;
+}
+
+.advantages__img {
+  width: 90px;
+  height: 90px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

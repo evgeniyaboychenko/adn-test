@@ -1,0 +1,60 @@
+.link {
+  border: none;
+  border-radius: 0;
+  background-color: $color-transparent;
+  color: inherit;
+
+  // color: @color-nobel;
+
+  cursor: pointer;
+
+  transition: opacity $trans-default, color $trans-default;
+
+
+  // &--underline {
+  //   text-decoration: underline;
+  //   text-decoration-skip-ink: none;
+  // }
+
+  // &--uppercase {
+  //   text-transform: uppercase;
+  // }
+
+  &:hover,
+  &:focus {
+      color: $color-safety-orange;
+
+      // svg {
+      // }
+  }
+
+
+
+  &:disabled {
+    color: $color-dim-gray;
+    pointer-events: none;
+  }
+
+
+  &--blue {
+    color: $color-dodger-blue;
+
+    &:hover,
+    &:focus {
+      color: $color-dodger-blue;
+      text-decoration: underline;
+    }
+
+    &:disabled {
+      color: $color-dim-gray;
+    }
+  }
+  // &--black {
+  //   color: @color-black;
+
+  //   &:hover,
+  //   &:focus {
+  //     color: @color-black-opacity;
+  //   }
+  // }
+}

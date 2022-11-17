@@ -1,35 +1,62 @@
-<header class="header @@if (context.mod) { header--@@mod }">
+<header class="header">
   <div class="container">
-    @@if (!context.index) {
-      <a class="header__logo" href="index.html" aria-label="Переход на главную">
-        Логотип
-      </a>
-    }
-    @@if (context.index) {
-      <span class="header__logo">
-        Логотип
-      </span>
-    }
+    <div class="header__wrapper">
+      @@if (!context.index) {
+        <a class="header__logo" href="index.html" aria-label="Переход на главную">
+          <svg width="160" height="50">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+        </a>
+      }
+      @@if (context.index) {
+        <span class="header__logo">
+          <svg width="160" height="50">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+        </span>
+      }
 
-    <nav class="main-nav">
-      <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="#icon-burger"></use>
-        </svg>
-      </button>
-      <div class="main-nav__wrapper">
-        <ul class="main-nav__list">
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 0) { is-active }" @@if (context.headerActiveLinkIndex !== 0) { href="#" }>Страница 1</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 1) { is-active }" @@if (context.headerActiveLinkIndex !== 1) { href="#" }>Страница 2</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 2) { is-active }" @@if (context.headerActiveLinkIndex !== 2) { href="#" }>Страница 3</a>
-          </li>
-        </ul>
+      <div class="header__search">
+        <form method="get" action="#" autocomplete="off">
+          <div class="search">
+            <label for="searching" aria-label="Поиск по каталогу">
+              каталог
+            </label>
+            <input type="search" id="searching" name="searching">
+            <button class="link search__button" type="submit">
+              <svg width="17" height="17">
+                <use xlink:href="#icon-search"></use>
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
-    </nav>
+
+      <ul class="user-menu">
+        <li class="user-menu__item">
+          <a class="user-menu__link link" href="#">
+            <svg width="32" height="32">
+              <use xlink:href="#icon-user"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__link link" href="#">
+            <svg width="32" height="32">
+              <use xlink:href="#icon-favorites"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="user-menu__item">
+          <a class="user-menu__link link" href="#">
+            <svg width="32" height="32">
+              <use xlink:href="#icon-basket"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+    </div>
   </div>
 </header>
+

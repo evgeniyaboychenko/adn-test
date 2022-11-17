@@ -13,6 +13,16 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 $color-neon-blue:                   #2c39f2;
 $color-torch-red:                   #ff1553;
 
+$color-nero:      #141414;
+$color-spring-green: #00FF66;
+$color-safety-orange:  #FF5C00;
+$color-aqua: #00FFF0;
+$color-dark-gray: #AAAAAA;
+$color-dim-gray: #707070;
+$color-dodger-blue: #2C80FF;
+
+
+
 // Gradient
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
@@ -51,8 +61,8 @@ $vp-1280:                           1280px;
 $vp-1440:                           1440px;
 $vp-1920:                           1920px;
 
-// Retina
-// ---------------------------------
 
-$retina-dpi:                        144dpi;
-$retina-dppx:                       1.5dppx;
+$desktop-width: 1920px;
+$desktop-1440-width: 1440px;
+$tablet-width: 1023px;
+$mobile-width: 767px;
