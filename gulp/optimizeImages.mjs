@@ -48,7 +48,7 @@ const createWebp = () => {
 
 const optimizeImages = () =>
   gulp
-      .src('build/img/**/*.{png,jpg}')
+      .src('build/img/content/*.{png,jpg}')
       .pipe(
           imagemin([
             imagemin.optipng({optimizationLevel: 3}),
