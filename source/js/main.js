@@ -1,6 +1,8 @@
-// import {iosVhFix} from './utils/ios-vh-fix';
+import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import {accordionHide} from './modules/accordion';
+import {filterShow} from './modules/filter';
+
 
 // ---------------------------------
 
@@ -9,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
 
-  // iosVhFix();
+  iosVhFix();
 
   // Modules
   // ---------------------------------
@@ -19,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', () => {
     initModals();
     accordionHide();
+    filterShow();
   });
 });
 

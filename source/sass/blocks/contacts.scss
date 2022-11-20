@@ -1,0 +1,19 @@
+.contacts__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.contacts__element {
+  margin-bottom: 17px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

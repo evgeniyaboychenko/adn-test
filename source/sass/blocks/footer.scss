@@ -1,4 +1,48 @@
 .footer {
-  padding: 40px 0;
+  position: relative;
+  padding: 0;
+  padding-bottom: 24px;
   background-color: $color-nero;
 }
+
+.footer__wrapper {
+  padding-top: 43px;
+  border-top: 1px solid $color-dim-gray;
+}
+
+.footer__bottom,
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1023 {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__top {
+  margin-bottom: 63px;
+
+  @include vp-1023 {
+    display: none;
+  }
+}
+
+.footer__bottom {
+  color: $color-dark-gray;
+}
+
+.footer__nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 222px 222px;
+  grid-gap: 12px;
+
+  font-size: 16px;
+  line-height: 130%;
+}
+

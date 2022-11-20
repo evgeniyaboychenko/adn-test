@@ -1,21 +1,59 @@
 .btn {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 20px;
 
   color: $color-default-white;
 
-  background-color: $color-neon-blue;
+  background-color: inherit;
   border: none;
   cursor: pointer;
 
-  transition: opacity $trans-default, color $trans-default;
+  background-color: $color-nero;
+  color: $color-default-white;
+
+  border: 1px solid $color-default-white;
+  border-radius: 40px;
+  outline: none;
+
+  transition: opacity $trans-default, color $trans-default, background-color $trans-default, border-color $trans-default;
+
+  &:hover,
+  &:focus {
+    background-color: $color-safety-orange;
+  }
 
   &:disabled {
     color: $color-dim-gray;
     pointer-events: none;
   }
 
-  // @include hover-focus {
-  //   opacity: 0.8;
-  // }
+  &--gray {
+    background-color: $color-dim-gray;
+    border-color: $color-dim-gray;
+
+    &:hover,
+    &:focus {
+      background-color: $color-safety-orange;
+      border-color: $color-safety-orange;
+    }
+  }
+
+  &--no-radius {
+    border-radius: 0;
+  }
+  
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--width {
+    width: 100%;
+  }
 }
+
+
+
+
+

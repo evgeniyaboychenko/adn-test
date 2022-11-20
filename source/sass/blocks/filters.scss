@@ -1,0 +1,144 @@
+.filters {
+  background-color: $color-nero;
+
+  @include vp-1023 {
+    display: none;
+
+    &.is-open {
+      position: relative;
+      display: block;
+      top: 0;
+      left: 0;
+
+      .filters__overlay {
+        position: fixed;
+        display: block;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        background-color: $color-nero-transparent08;
+
+        cursor: pointer;
+      }
+
+      .filters__form-wrap {
+        padding-left: 38px;
+        padding-right: 38px;
+        overflow: auto;
+        min-height: calc(100vh - 228px);
+        min-height: calc(100*var(--vh, 1vh) - 228px);
+        max-height: calc(100vh - 228px);
+        max-height: calc(100*var(--vh, 1vh) - 228px);
+      }
+    }
+  }
+}
+
+.filters__form {
+  padding-top: 24px;
+}
+// .filters__wrapper {
+//   @include vp-1023 {
+//     position: relative;
+//     display: flex;
+//     flex-shrink: 0;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+//     min-height: 100%;
+//     height: 100%;
+//   }
+// }
+
+.filters__content {
+  background-color: $color-nero;
+
+  @include vp-1023 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 375px;
+    z-index: 200;
+  }
+}
+
+.filters__btn-close {
+  display: none;
+
+  @include vp-1023 {
+    display: flex;
+    padding: 38px;
+    padding-top: 30px;
+    justify-content: flex-start;
+
+    font-size: 16px;
+    line-height: 110%;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+  }
+}
+
+.filters__fieldset {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 24px;
+  // padding-top: 16px;
+  // padding-bottom: 16px;
+  border: none;
+  border-bottom: 1px dashed $color-dim-gray;
+}
+
+
+.filters__title {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 24px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+
+  color: $color-default-white;
+}
+
+.filters__fieldset-buttons {
+  padding-left: 38px;
+  padding-right: 38px;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filters__fieldset-buttons--mobile {
+  display: none;
+
+  @include vp-1023 {
+    display: flex;
+    margin-bottom: 24px;
+  }
+}
+
+.filters__submit {
+  margin-bottom: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.filters__reset {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+}

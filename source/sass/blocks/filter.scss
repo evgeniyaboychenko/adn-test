@@ -1,52 +1,38 @@
-.filter-input + label {
+// .filter {
+//   display: flex;
+// }
+
+.filter__input + label {
+  display: flex;
   cursor: pointer;
 
   &::before {
     display: inline-block;
     content: "";
     width: 16px;
+    min-width: 16px;
     height: 16px;
-    margin-right: 8px;
     background-image: url(../img/svg/icon-checkbox.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
   }
 }
 
-.filter-input:hover + label,
-.filter-input:focus + label {
+.filter__input:hover + label,
+.filter__input:focus + label {
   color: $color-safety-orange;
 }
 
-.filter-input:disabled + label {
+.filter__input:disabled + label {
   color: opacify 0.5;
 }
 
-.filter-input:checked + label {
+.filter__input:checked + label {
   &::before {
     background-image: url(../img/svg/icon-checkbox-on.svg);
   }
 }
 
-.filter__fieldset {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 24px;
-  // padding-top: 16px;
-  // padding-bottom: 16px;
-  border: none;
-  border-bottom: 1px dashed $color-dim-gray;
-}
-
-.filter__title {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 24px;
-
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 100%;
-
-  color: $color-default-white;
+.filter__text {
+  margin-left: 8px;
 }

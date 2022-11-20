@@ -1,7 +1,16 @@
+.page-catalog {
+  margin-bottom: 80px;
+}
+
 .page-catalog__column {
   display: grid;
-  grid-template-columns: 217px 1fr;
+  grid-template-columns: 217px minmax(629px, 1fr);
   grid-gap: 21px;
+
+
+  @include vp-1023 {
+    display: block;
+  }
 }
 
 .page-catalog__count {
@@ -10,4 +19,41 @@
   line-height: 130%;
   color: $color-safety-orange;
   vertical-align: top;
+}
+
+.page-catalog__wrap-mob {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  @include vp-1023 {
+  margin-bottom: 40px;
+  }
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.page-catalog__btn-filters {
+  display: none;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+
+  @include vp-1023 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.page-catalog__title {
+  min-width: 190px;
 }

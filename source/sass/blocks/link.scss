@@ -23,9 +23,6 @@
   &:hover,
   &:focus {
       color: $color-safety-orange;
-
-      // svg {
-      // }
   }
 
 
@@ -48,6 +45,10 @@
     &:disabled {
       color: $color-dim-gray;
     }
+  }
+
+  &--gray {
+    color: $color-dim-gray;
   }
   // &--black {
   //   color: @color-black;
