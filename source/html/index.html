@@ -78,17 +78,19 @@
                       <label class="visually-hidden" for="price">Диапазон цены</label>
                       <input class="visually-hidden" type="text" value="0;10500" id="price" name="price"> -->
 
+
                       <div class="price__container-value">
                         <div class="price__value">
                           <label aria-label="Минимальная цена" for="minprice">от</label>
-                          <input type="number" name="minprice" id="minprice" value="0" min="0" max="10500" step="10">
+                          <input type="number" name="minprice" id="minprice" value="0" min="0" max="10500" step="10" data-min-price>
                         </div>
 
                         <div class="price__value">
                           <label aria-label="Максимальная цена" for="maxprice">до</label>
-                          <input type="number" name="maxprice" id="maxprice" value="10500" min="0" max="10500" step="10">
+                          <input type="number" name="maxprice" id="maxprice" value="10500" min="0" max="10500" step="10" data-max-price>
                         </div>
                       </div>
+                      <div class="price__scale" data-range-slider></div>
                     </div>
                   </fieldset>
                   <fieldset class="filters__fieldset">
@@ -262,8 +264,8 @@
                   </fieldset>
                 </div>
                 <fieldset class="filters__fieldset filters__fieldset-buttons filters__fieldset-buttons--mobile">
-                  <button class="filters__submit btn btn--gray btn--uppercase btn--width" type="submit">Применить</button>
-                  <button class="filters__reset link link--gray" type="reset">Сбросить фильтры</button>
+                  <button class="filters__submit btn btn--gray btn--uppercase btn--width" type="button">Применить</button>
+                  <button class="filters__reset link link--gray" type="reset" data-reset-filters>Сбросить фильтры</button>
                 </fieldset>
               </form>
             </div>
@@ -473,23 +475,9 @@
 
       </section>
     </div>
-
-
-
     </main>
 
     @@include("source/html/base/footer.html")
-
-    @@include("source/html/base/modal.html", {
-      "name": "feedback"
-    })
-
-    @@include("source/html/base/modal.html", {
-      "name": "success",
-      "fitContent": true,
-      "noScale": true,
-      "mod": "some-mod"
-    })
   </div>
 
   <script src="js/vendor.min.js"></script>

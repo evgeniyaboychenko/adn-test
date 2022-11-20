@@ -94,7 +94,6 @@
     gulp.watch('source/favicon/**', gulp.series(copy, refresh));
     gulp.watch('source/video/**', gulp.series(copy, refresh));
     gulp.watch('source/downloads/**', gulp.series(copy, refresh));
-    gulp.watch('source/*.php', gulp.series(copy, refresh));
   };
 ```
 
